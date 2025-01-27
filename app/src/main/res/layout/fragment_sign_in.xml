@@ -9,7 +9,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:id="@+id/tv_sign"
+        android:id="@+id/tv_signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
@@ -20,13 +20,13 @@
         android:textSize="20sp"/>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/et_signin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
-        android:hint="Enter your text title"
+        android:hint="@string/enter_your_text_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sign" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_signin" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_signIn"
@@ -34,10 +34,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:background="@color/blue"
-        android:text="Continue"
+        android:text="@string/continueM"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/et_signin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,4 +3,6 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="text_title">Text title</string>
+    <string name="enter_your_text_title">Enter your text title</string>
+    <string name="continueM">Continue</string>
 </resources>
