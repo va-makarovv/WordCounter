@@ -17,7 +17,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.wordcounter.R;
 
-public class SignInFragment extends Fragment {
+public class
+SignInFragment extends Fragment {
     private EditText etTitle;
     private AppCompatButton btCont;
     public static final String shPrefKey = "SH_PREF_KEY";
