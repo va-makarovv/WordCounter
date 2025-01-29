@@ -34,8 +34,9 @@ public class CounterFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_counter,container,false);
         Log.e("Title", getArguments().getString("title"));
-        String name = getArguments().getString("title");
+        String title = getArguments().getString("title");
         tvTitle = view.findViewById(R.id.tv_counter);
+        tvTitle.setText(title +" word count: 0");
         etText = view.findViewById(R.id.et_counter);
         btBack = view.findViewById(R.id.bt_back);
 
@@ -55,7 +56,7 @@ public class CounterFragment extends Fragment {
 
         private void updateWordCount(String text) {
                 int wordCount = WordCounter.countWords(text);
-                tvTitle.setText("Word count: " + String.valueOf(wordCount));
+                tvTitle.setText(title +" word count: " + String.valueOf(wordCount));
         }
 
             @Override
