@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
-        android:text=" word count: "
+        android:text="@string/word_count"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
-        android:hint="Paste your text here"
+        android:hint="@string/paste_your_text_here"
         android:textSize="16sp"
         android:textColor="@color/grey"
         app:layout_constraintBottom_toTopOf="@+id/bt_back"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:backgroundTint="@color/blue"
-        android:text="Back"
+        android:text="@string/back"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="40dp" />

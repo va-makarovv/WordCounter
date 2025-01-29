@@ -5,4 +5,7 @@
     <string name="text_title">Text title</string>
     <string name="enter_your_text_title">Enter your text title</string>
     <string name="continueM">Continue</string>
+    <string name="paste_your_text_here">Paste your text here</string>
+    <string name="back">Back</string>
+    <string name="word_count">word count:</string>
 </resources>
