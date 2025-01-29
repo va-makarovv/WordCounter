@@ -16,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavHost;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.wordcounter.R;
@@ -25,21 +27,24 @@ public class CounterFragment extends Fragment {
     private TextView tvTitle;
     private EditText etText;
     private AppCompatButton btBack;
-    private SharedPreferences sharedPreferences;
     private int count;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_counter,container,false);
-        sharedPreferences = getContext().getSharedPreferences(SignInFragment.shPrefKey, Context.MODE_PRIVATE);
-        count = sharedPreferences.getInt("count",0);
         Log.e("Title", getArguments().getString("title"));
         String name = getArguments().getString("title");
         tvTitle = view.findViewById(R.id.tv_counter);
         etText = view.findViewById(R.id.et_counter);
         btBack = view.findViewById(R.id.bt_back);
 
+        btBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_counterFragment_to_signInFragment);
+            }
+        });
 
 
         etText.addTextChangedListener(new TextWatcher() {
@@ -50,7 +55,7 @@ public class CounterFragment extends Fragment {
 
         private void updateWordCount(String text) {
                 int wordCount = WordCounter.countWords(text);
-                tvTitle.setText(String.valueOf(wordCount));
+                tvTitle.setText("Word count: " + String.valueOf(wordCount));
         }
 
             @Override
@@ -63,16 +68,14 @@ public class CounterFragment extends Fragment {
         });
 
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return view;
 
     }
 
 
     @Override
     public void onStop() {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt("count", count);
-        editor.apply();
+
         super.onStop();
     }
 }
